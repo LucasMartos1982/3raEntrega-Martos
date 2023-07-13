@@ -1,0 +1,19 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    {% if curso %}
+        <p> Busqueda de {{camada}}</p>    
+        <ul>
+            {% for cur in curso %}
+                <li> {{cur.nombre}}</li>
+                <li> {{cur.camada}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <p style="color: red;"> {{ respuesta }}</p>
+
+{% endblock %}

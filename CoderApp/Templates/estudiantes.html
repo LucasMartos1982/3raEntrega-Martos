@@ -1,0 +1,21 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    <!-- En este lugar va lo que cambia y se asocia a la vista -->
+    <h4> - Alta de Estudiantes - </h4>
+    <br>
+    {% if myForm.errors %} <!-- si me da error envio un mens-->
+        <p style="color:red;"> Error en los datos!</p>
+    {% endif %}
+    <form action="" method="POST">{% csrf_token %}
+        <table>
+            {{ myForm.as_table }}    
+        </table>
+        <input type="submit" value="Enviar">
+    </form>
+    <br>  
+
+{% endblock %}
